@@ -3,7 +3,7 @@ Houdini Terrain Generation - The Icy Mountain of Sleeping Giant
 **University of Pennsylvania, CIS 566: Procedural Graphics, Project 4, Haoquan Liang**   
 # Overview
 In this project, we are exploring the powerful capabilities of Houdini in terrain generation. We will be experimenting different nodes and functions to create interesting-looking terrains with assets scattered on it.     
-I wouldn't be able to get my result without [The Complete A-Z Terrain Handbook](https://www.sidefx.com/tutorials/the-complete-a-z-terrain-handbook/) by [Nikola Damjanov](https://www.sidefx.com/profile/damjanmx/). I learned a variety of heightfield nodes from this tutorial, and I followed its ideas in `08: ICY BIOME HF Breakdown` to get the snow-layered look in my terrain. I also followed `13: ICY BIOME Shaders and Rendering` to apply complex shading to the terrain.   
+I wouldn't be able to get my result without [The Complete A-Z Terrain Handbook](https://www.sidefx.com/tutorials/the-complete-a-z-terrain-handbook/) by [Nikola Damjanov](https://www.sidefx.com/profile/damjanmx/). I learned a variety of heightfield nodes from this tutorial, and I followed its ideas in `08: ICY BIOME HF Breakdown` to get the snow-layered look in my terrain. I also followed `09: ICY BIOME COPs Texture Breakdown` to apply complex shading to the terrain.   
 
  ![overview](/img/overview.jpg)   
  ![overview2](/img/overview2.jpg)
@@ -14,11 +14,11 @@ I wouldn't be able to get my result without [The Complete A-Z Terrain Handbook](
 * HDA widget that allows the user to change tree number/size/complexity(L-system iteration), and height of the mountains
 * Advanced terrain shading with cop2net. 
 
-# Implementation
+# Details
 ### Terrain
  ![terrain](/img/terrain.jpg)   
  Terrain generation can be broken down into 6 steps.   
-  ![terrain steps](/img/terrain-steps.jpg)   
+  ![terrain steps](/img/terrain-steps.png)   
  **1. Shape**   
  I want the terrain to have mainly visible four mountains. So I chose to scatter 4 tubes on a grid, and then project it to the heightfield. However, that will make the mountains look very uniform and pointy, so applying some blurs, noises, and distorts to make it look more natural.    
  **2. Noise**   
@@ -48,3 +48,6 @@ There are 4 attributes that can be modified on the HDA:
 3. Tree complexity (L-system iteration number)
 4. Mountain height (will take a very long time to process all the noises/erosion/slump again.
 ### Advanced Shading
+ ![texture](/img/texture.png)   
+The shading is done by creating a texture with `cop2net`. I highly recommend watching the [terrain handbook tutorial](https://www.sidefx.com/tutorials/the-complete-a-z-terrain-handbook/) as it goes the reasons behind each texture.    
+In genral, all the terrain generation nodes will give us a masked terrain called layer. Each layer is the result of applying certain nodes. We use the slope layer to generate the snow texture (since snows stay on flat ground and flows on slope). We use the height layer to generate the "value" texture (higher is brighter) as well as the edge texture, since sudden height change usually means it's an edge. We use the flow layer to generate the thick snow layer on the slopes, and use the extra masked layer to generate the ridge lines. With all the above textures, we composite them together, adding some noises to generate the final texture.     
