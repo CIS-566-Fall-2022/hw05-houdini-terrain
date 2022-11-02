@@ -5,22 +5,35 @@
 ### For the Terrain part
 
 * Followed loosely this tutorial https://www.youtube.com/watch?v=rwLbiuKX5D0
-* Created curves and merged different layeres of noise using multiple nodes to get a terrain.
+
+* Created curves and merged different layeres of noise using multiple nodes to get a more real terrain, applying erosion and masking nodes.
+
+
 ![](renderpartial.png)
+
+
 ### For the scene object
 
-* Scattered boxes that were procedural modified with multiple nodes that jitter their points and change randomly the look of the box.
+* Scattered rocks on particular mask.
+* The rocks were procedurally created from a starting box and then modified with multiple nodes that jitter their points and change randomly the look.
 * Smooth and reduced polygons.
-* This achieved a procerual rock look.
+* This achieved a procedural rock look.
 
 ### For the make it usable:
 
+
 * Exported my network as a hda with 3 paramters: terrain color ramp, rock color ramp and ampltide of additional noise layered on top of base terrain.
+
+
 ![](hda.png)
+
 
 ### For extra spice
 
+
 * Created procedural coloring using different masks and filters inside a COP2 Network
+
+
 ![](proceduralcolor.png)
 
 
