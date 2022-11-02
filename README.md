@@ -19,6 +19,8 @@
 * Smooth and reduced polygons.
 * This achieved a procedural rock look.
 
+![](final.png)
+
 ### For the make it usable:
 
 
