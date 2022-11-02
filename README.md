@@ -1,4 +1,47 @@
 # hw05 Houdini Terrain
+
+### Took one late day.
+
+### For the Terrain part
+
+* Followed loosely this tutorial https://www.youtube.com/watch?v=rwLbiuKX5D0
+
+* Created curves and merged different layeres of noise using multiple nodes to get a more real terrain, applying erosion and masking nodes.
+
+
+![](renderpartial.png)
+
+
+### For the scene object
+
+* Scattered rocks on particular mask.
+* The rocks were procedurally created from a starting box and then modified with multiple nodes that jitter their points and change randomly the look.
+* Smooth and reduced polygons.
+* This achieved a procedural rock look.
+
+![](final.png)
+
+### For the make it usable:
+
+
+* Exported my network as a hda with 3 paramters: terrain color ramp, rock color ramp and ampltide of additional noise layered on top of base terrain.
+
+
+![](hda.png)
+
+
+### For extra spice
+
+
+* Created procedural coloring using different masks and filters inside a COP2 Network
+
+
+![](proceduralcolor.png)
+
+
+
+
+
 Let's explore Houdini and get a basic understanding of the workflow and interface.
 
 For this assignment, our resident Houdini expert Dan will provide a a simple Houdini network that spawns objects on a bit of terrain. It's not a terribly complex or interesting scene! Please experiment to make it more interesting :)
