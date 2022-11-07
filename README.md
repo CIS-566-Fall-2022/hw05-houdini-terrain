@@ -1,7 +1,7 @@
 # lumpy island
 ![image](https://user-images.githubusercontent.com/60904107/200206885-470dafd9-b870-454a-ad24-a50cc5323669.png)
 
-A terrain with features scatteres accross it. The two types of features are deformed sphere's (lumps) and deformed head mesh.
+A terrain with features scattered accross it. The two types of features are deformed sphere's (lumps) and deformed head mesh.
 
 The following controlls are parameterizable
 
