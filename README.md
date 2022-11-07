@@ -1,3 +1,16 @@
+# lumpy island
+![image](https://user-images.githubusercontent.com/60904107/200206885-470dafd9-b870-454a-ad24-a50cc5323669.png)
+
+A terrain with features scatteres accross it. The two types of features are deformed sphere's (lumps) and deformed head mesh.
+
+The following controlls are parameterizable
+
+![image](https://user-images.githubusercontent.com/60904107/200207023-d657674d-7820-4996-b467-62832d294365.png)
+
+
+"feature size": adjusts the size of the deformed heads
+
+
 # hw05 Houdini Terrain
 Let's explore Houdini and get a basic understanding of the workflow and interface.
 
